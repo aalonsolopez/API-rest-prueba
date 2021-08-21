@@ -1,16 +1,16 @@
-var mongoose = require("mongoose"),
-  Schema = mongoose.Schema;
+exports = module.exports = function (app, mongoose) {
 
-var videogameSchema = new Schema({
-  title: { type: String },
-  year: { type: Number },
-  company: { type: String },
-  poster: { type: String },
-  genre: {
-    type: String,
-    enum: ["MMO", "RPG", "Adventure", "Horror", "Sandbox", "Farming"],
-  },
-  summary: { type: String },
-});
+  var videogameSchema = new mongoose.Schema({
+    title: { type: String },
+    year: { type: Number },
+    company: { type: String },
+    poster: { type: String },
+    genre: {
+      type: String,
+      enum: ["MMO", "RPG", "Adventure", "Horror", "Sandbox", "Farming"],
+    },
+    summary: { type: String },
+  });
 
-module.exports = mongoose.model("vgames", videogameSchema);
+  mongoose.model('vgames', videogameSchema);
+};
