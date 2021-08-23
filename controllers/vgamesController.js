@@ -54,6 +54,10 @@ function updateVgame(req, res) {
       genre: req.body.genre,
       summary: req.body.summary,
     },
+    {
+      new: true,
+      runValidators: true,
+    },
     (err, success) => {
       if (err) { res.send(500, err.message); }
       res.send(success);
