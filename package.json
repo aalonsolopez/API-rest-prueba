@@ -6,6 +6,12 @@
         "bson": "^4.4.1",
         "express": "^4.7.1",
         "method-override": "^2.1.2",
-        "mongoose": "^5.13.2"
+        "mongoose": "^5.13.2",
+        "nodemon": "^2.0.12"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.24.1"
     }
 }
