@@ -13,3 +13,5 @@ mongoose.connect(mongodb, (err) => {
 
   app.listen(port, console.log('Node server running on http://localhost:3000'));
 });
+
+module.exports = app;

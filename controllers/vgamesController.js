@@ -15,7 +15,7 @@ function findAllVgames(req, res) {
 // GET - Return a  vgame with specified ID
 function findVgameById(req, res) {
   vgame.findById(req.params.id, (err, vgames) => {
-    if (err) return res.send(500, err.message);
+    if (err) return res.status(400).send(err.message);
     console.log(`GET /vgame/${req.params.id}`);
     res.status(200).send(vgames);
   });
@@ -38,7 +38,7 @@ function addVgame(req, res) {
 
 function deleteVgame(req, res) {
   vgame.findByIdAndDelete(req.params.id, (err) => {
-    if (err) return res.status(500).send(err.message);
+    if (err) return res.status(400).send(err.message);
     return res.status(200).send();
   });
 }
