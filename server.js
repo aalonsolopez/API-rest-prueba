@@ -11,7 +11,7 @@ mongoose.connect(mongodb, { useNewUrlParser: true, useUnifiedTopology: true }, (
     console.log(`ERROR: connecting to Database. ${err}`);
   }
 
-  app.listen(port, console.log('Node server running on http://localhost:3000'));
+  app.listen(port, console.log(`Node server running on http://localhost:${port}`));
 });
 
 module.exports = app;
