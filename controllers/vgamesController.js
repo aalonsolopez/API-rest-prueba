@@ -3,7 +3,6 @@ require('../models/genre');
 
 // GET - Return all vgames in the DB
 function findAllVgames(req, res) {
-
   vgame.find({}).populate('genre', 'name').exec((err, vgameData) => {
     if (err) {
       return res.status(400).send(err.message);
@@ -23,9 +22,6 @@ function findVgameById(req, res) {
 
 // POST - Insert a new  vgame in the DB
 function addVgame(req, res) {
-  console.log('POST');
-  console.log(req.body);
-
   const vgameAux = new vgame(req.body);
 
   vgameAux.save((err, newVgame) => {
